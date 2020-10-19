@@ -2,7 +2,7 @@ require 'yaml'
 
 def load_library(file_path = 'lib/emoticon.yml')
  emoticon_library = YAML.load_file(file_path)
- result = emoticon_library.each_with_object ({}) do |(key, value) final_hash|
+ result = emoticon_library.each_with_object ({}) do |(key, value), final_hash|
    if !final_hash[key] = {
      :english => value[0],
      :japanese => value[1]
