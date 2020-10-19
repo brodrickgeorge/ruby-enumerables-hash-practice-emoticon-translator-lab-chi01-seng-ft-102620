@@ -17,11 +17,19 @@ def get_japanese_emoticon
 end
 
 def get_english_meaning(library, japanese_emoticon)
-  library = load_library(library)
-   library.each do |value, meaning|
-       if library[value][:japanese] == japanese_emoticon
-         return library[value]
+  emoticons = load_library(file)
+  eng_meaning = ""
+  apology = "Sorry, that emoticon was not found"
+  emoticons.each do |emotion, lang|
+    lang.each do |inner_key,emoticon|
+      if emoticon == j_emoticon
+        eng_meaning = emotion
       end
-    return "Sorry, that emoticon was not found" 
+    end
+    if eng_meaning == ""
+      eng_meaning = apology
+    end  
   end
+  eng_meaning
+end
 end
