@@ -12,8 +12,7 @@ def load_library(file_path = 'lib/emoticon.yml')
  end
 end
 
-def get_japanese_emoticon
- def get_japanese_emoticon(file, eng_emoji)
+def get_japanese_emoticon(file, eng_emoji)
   
   emoticons = load_library(file)
   emoticons.each do |mood, symbols|
@@ -25,7 +24,7 @@ def get_japanese_emoticon
   end
    return "Sorry, that emoticon was not found" 
 end
-end
+
 
 def get_english_meaning(file,j_emoticon)
   emoticons = load_library(file)
