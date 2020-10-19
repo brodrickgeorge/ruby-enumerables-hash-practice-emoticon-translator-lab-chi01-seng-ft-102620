@@ -32,4 +32,3 @@ def get_english_meaning(library, japanese_emoticon)
   end
   eng_meaning
 end
-end
